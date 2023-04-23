@@ -1,0 +1,39 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'?>
+
+<main role="main" class="container">
+
+  <div class="jumbotron">
+    <h1>Posts</h1>
+    <p class="lead"> Gerenciador de Postagens </p>
+    <?php require VIEWS_PATH . 'includes/messages.phtml' ?>
+  </div>
+
+</main>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Titulo</th>
+        <th>Criado em</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach($this->posts as $p):?>
+        <tr>
+          <td><?=$p['id']?></td>
+          <td><?=$p['title']?></td>
+          <td><?=date('d/m/Y H:i:s', strtotime($p['created_at']))?></td>
+          <td>
+            <a href="<?=HOME?>/blog/edit/<?=$p['id']?>" class="btn btn-default"> Editar </a>
+            <a href="<?=HOME?>/blog/remove/<?=$p['id']?>" class="btn btn-danger"> Excluir </a>
+          </td>
+        </tr>
+      <?php endforeach ?>
+    </tbody>
+  </table>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'?>

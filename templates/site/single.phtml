@@ -1,0 +1,19 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'?>
+
+<main role="main" class="container">
+
+  <div class="row">
+      <div class="col-md-4">
+        <img src="http://via.placeholder.com/250x350?text=<?=$this->post['title']?>" alt="" class="img-responsive">
+      </div>
+      <div class="col-md-8">
+        <h2><?=$this->post['title']?></h2>
+        <small><?=date('d-m-Y H:i:s', strtotime($this->post['created_at']))?></small>
+        <p><?=$this->post['content']?></p>
+      </div>
+
+  </div>
+
+</main>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'?>

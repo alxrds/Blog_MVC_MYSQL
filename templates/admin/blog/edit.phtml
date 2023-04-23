@@ -1,0 +1,29 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'?>
+
+<div class="container">
+
+    <h1>Editar postagem</h1>
+    <?php require VIEWS_PATH . 'includes/messages.phtml' ?>
+
+    <form action="<?=HOME?>/blog/edit/<?=$this->post['id']?>" method="post">
+        <div class="form-group">
+            <label for="">Titulo</label>
+            <input type="text" class="form-control" name="title" value="<?=$this->post['title']?>">
+        </div>
+        <div class="form-group">
+            <label for="">Conteúdo</label>
+            <textarea class="form-control" name="content" cols="10" rows="5"><?=$this->post['content']?></textarea>
+        </div>
+        <div class="form-group">
+            <label for="">Categoria</label>
+            <select name="category_id" class="form-control">
+                <?php foreach($this->categories as $c):?>
+                    <option value="<?=$c['id']?>" <?php if($this->post['category_id'] == $c['id']):?> selected <?php endif?>><?=$c['name']?></option>
+                <?php endforeach ?>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Editar post</button>
+    </form>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'?>

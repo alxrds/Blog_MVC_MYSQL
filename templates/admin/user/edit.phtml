@@ -1,0 +1,35 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'?>
+
+<div class="container">
+    <h1>Cadastro de postagens</h1>
+    <?php require VIEWS_PATH . 'includes/messages.phtml' ?>
+    <form action="<?=HOME?>/user/edit/<?=$this->user['id']?>" method="post">
+        <div class="form-group">
+            <label for="">Nome</label>
+            <input type="text" class="form-control" name="first_name" value="<?=$this->user['first_name']?>">
+        </div>
+        <div class="form-group">
+            <label for="">Sobrenome</label>
+            <input type="text" class="form-control" name="last_name" value="<?=$this->user['last_name']?>">
+        </div>
+        <div class="form-group">
+            <label for="">E-mail</label>
+            <input type="text" class="form-control" name="email" value="<?=$this->user['email']?>">
+        </div>
+        <div class="form-group">
+            <label for="">Username</label>
+            <input type="text" class="form-control" name="username" value="<?=$this->user['username']?>">
+        </div>
+        <div class="form-group">
+            <label for="">Senha</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+        <div class="form-group">
+            <label for="">Confirme a Senha</label>
+            <input type="password" class="form-control" name="password_confirm">
+        </div>
+        <button type="submit" class="btn btn-primary">Editar usuário</button>
+    </form>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'?>

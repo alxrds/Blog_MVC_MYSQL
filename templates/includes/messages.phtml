@@ -1,0 +1,17 @@
+<?php if(\App\Session\Session::has('success')): ?>
+    <div class="alert alert-success">
+        <?=\App\Session\Flash::get('success')?>
+    </div>
+<?php endif?>
+
+<?php if(\App\Session\Session::has('warning')): ?>
+    <div class="alert alert-warning">
+        <?=\App\Session\Flash::get('warning')?>
+    </div>
+<?php endif?>
+
+<?php if(\App\Session\Session::has('error')): ?>
+    <div class="alert alert-danger">
+        <?=\App\Session\Flash::get('error')?>
+    </div>
+<?php endif?>

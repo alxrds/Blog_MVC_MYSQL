@@ -1,0 +1,24 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'?>
+
+<main role="main" class="container">
+
+  <div class="jumbotron">
+    <h1>Home</h1>
+    <p class="lead"> Gerenciador de Notícias </p>
+    <?php require VIEWS_PATH . 'includes/messages.phtml' ?>
+  </div>
+
+  <div class="row">
+    <?php foreach($this->posts as $p): ?>
+      <div class="col-md-4">
+        <h2><a href="<?=HOME.'/post/'.$p['slug']?>"><?=$p['title']?></a></h2>
+        <small><?=$p['created_at']?></small>
+        <p><?=$p['content']?></p>
+      </div>
+    <?php endforeach ?>
+  </div>
+
+</main>
+
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'?>

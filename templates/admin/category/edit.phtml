@@ -1,0 +1,19 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'?>
+
+<div class="container">
+    <h1>Cadastro de categorias</h1>
+    <?php require VIEWS_PATH . 'includes/messages.phtml' ?>
+    <form action="<?=HOME?>/category/edit/<?=$this->category['id']?>" method="post">
+        <div class="form-group">
+            <label for="">Nome</label>
+            <input type="text" class="form-control" name="name" value="<?=$this->category['name']?>">
+        </div>
+        <div class="form-group">
+            <label for="">Descrição</label>
+            <textarea name="description" class="form-control" cols="30" rows="3"><?=$this->category['description']?></textarea>        
+        </div>
+        <button type="submit" class="btn btn-primary">Editar categoria</button>
+    </form>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'?>

@@ -1,0 +1,40 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'?>
+
+<main role="main" class="container">
+
+  <div class="jumbotron">
+    <h1>Categorias</h1>
+    <p class="lead"> Gerenciador de Categorias </p>
+    <?php require VIEWS_PATH . 'includes/messages.phtml' ?>
+  </div>
+
+</main>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach($this->categories as $c):?>
+        <tr>
+          <td><?=$c['id']?></td>
+          <td><?=$c['name']?></td>
+          <td><?=$c['description']?></td>
+          <td><?=date('d/m/Y H:i:s', strtotime($c['created_at']))?></td>
+          <td>
+            <a href="<?=HOME?>/category/edit/<?=$c['id']?>" class="btn btn-default"> Editar </a>
+            <a href="<?=HOME?>/category/remove/<?=$c['id']?>" class="btn btn-danger"> Excluir </a>
+          </td>
+        </tr>
+      <?php endforeach ?>
+    </tbody>
+  </table>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'?>
